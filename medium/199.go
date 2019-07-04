@@ -62,7 +62,6 @@ func rightSideView2(root *TreeNode) []int {
 		size := queue.Len()
 		for ; size > 0;  {
 			node := queue.Front()
-			val := node.Value.(*TreeNode).Val
 			queue.Remove(node)
 			if left := node.Value.(*TreeNode).Left; left != nil {
 				queue.PushBack(left)
@@ -73,7 +72,7 @@ func rightSideView2(root *TreeNode) []int {
 
 			size = size - 1
 			if size == 0 {
-				view = append(view, val)
+				view = append(view, node.Value.(*TreeNode).Val)
 			}
 		}
 	}
