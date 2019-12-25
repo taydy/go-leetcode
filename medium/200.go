@@ -22,6 +22,10 @@ package medium
 //	来源：力扣（LeetCode）
 //	链接：https://leetcode-cn.com/problems/number-of-islands
 //
+// 思路:
+//		线性扫描整个二维网格，如果一个结点包含 1，则以其为根结点启动深度优先搜索。在深度优先搜索过程中，
+//		每个访问过的结点被标记为 0。计数启动深度优先搜索的根结点的数量，即为岛屿的数量。
+//
 func NumIslands(grid [][]byte) int {
 	if grid == nil || len(grid) == 0 {
 		return 0
