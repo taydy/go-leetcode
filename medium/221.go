@@ -24,6 +24,7 @@ func MaximalSquare(matrix [][]byte) int {
 	nc := len(matrix[0])
 	max := 0
 
+	// 寻找第一行中是否有 1, 有的话目前最大面积为 1
 	for r := 0; r < nr; r++ {
 		if matrix[r][0] == '1' {
 			max = 1
@@ -31,8 +32,10 @@ func MaximalSquare(matrix [][]byte) int {
 		}
 	}
 
+	// 判断第一行中是否找到 1
 	if max == 0 {
-		for c := 0; c < nc; c++ {
+		// 寻找第一列中是否有 1, 有的话目前最大面积为 1
+		for c := 1; c < nc; c++ {
 			if matrix[0][c] == '1' {
 				max = 1
 				break
