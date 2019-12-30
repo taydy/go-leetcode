@@ -30,4 +30,25 @@ func TestSearch1(t *testing.T) {
 		t.Logf("except %d, actual %d", 9, result)
 		t.FailNow()
 	}
+
+	nums = []int{2, 5, 6, 0, 0, 1, 2}
+	result = Search1(nums, 0)
+	if result != 3 {
+		t.Logf("except %d, actual %d", 3, result)
+		t.FailNow()
+	}
+
+	nums = []int{1, 1}
+	result = Search1(nums, 0)
+	if result != -1 {
+		t.Logf("except %d, actual %d", -1, result)
+		t.FailNow()
+	}
+
+	nums = []int{1, 3, 1, 1, 1}
+	result = Search1(nums, 3)
+	if result != 1 {
+		t.Logf("except %d, actual %d", 1, result)
+		t.FailNow()
+	}
 }

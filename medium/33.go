@@ -65,10 +65,23 @@ func findRotateIndex(nums []int, left, right int) int {
 
 	for left <= right {
 		pivot := left + (right-left)>>1
-		if nums[pivot] > nums[pivot+1] {
+
+		if pivot+1 < len(nums) && nums[pivot] > nums[pivot+1] {
 			return pivot + 1
 		}
-		if nums[pivot] < nums[left] {
+
+		// 因为有重复做数据,比如 [1,2,1,1,1,1], 此时还无法确定旋转点在哪一边
+		if nums[pivot] == nums[0] {
+			i := pivot
+			for i < len(nums)-1 && nums[i] == nums[i+1] {
+				i++
+			}
+			if i == len(nums)-1 {
+				right = pivot - 1
+			} else {
+				left = pivot + 1
+			}
+		} else if nums[pivot] < nums[left] {
 			right = pivot - 1
 		} else {
 			left = pivot + 1
