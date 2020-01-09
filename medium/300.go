@@ -15,6 +15,8 @@ import "taydy/go-leetcode/util"
 //	来源：力扣（LeetCode）
 //	链接：https://leetcode-cn.com/problems/longest-increasing-subsequence
 //
+// 注: 此题可以使用动态规划+二分查找实现复杂度 O(NlogN) 的解法.
+// https://leetcode-cn.com/problems/longest-increasing-subsequence/solution/dong-tai-gui-hua-she-ji-fang-fa-zhi-pai-you-xi-jia/
 func LengthOfLIS(nums []int) int {
 	n := len(nums)
 	if n == 0 {
