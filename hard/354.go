@@ -37,5 +37,5 @@ func MaxEnvelopes(envelopes [][]int) int {
 		heights[i] = envelopes[i][1]
 	}
 
-	return medium.LengthOfLIS(heights)
+	return medium.LengthOfLIS1(heights)
 }

@@ -47,3 +47,31 @@ func LengthOfLIS(nums []int) int {
 	}
 	return max
 }
+
+func LengthOfLIS1(nums []int) int {
+	n := len(nums)
+	top := make([]int, n)
+	piles := 0
+	for i := 0; i < n; i++ {
+		poker := nums[i]
+		left, right := 0, piles
+
+		for left < right {
+			mid := (left + right) >> 1
+			if top[mid] >= poker {
+				right = mid
+			} else if top[mid] < poker {
+				left = mid + 1
+			}
+		}
+
+		if left == piles {
+			piles++
+		}
+
+		top[left] = poker
+
+	}
+
+	return piles
+}

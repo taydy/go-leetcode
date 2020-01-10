@@ -9,4 +9,9 @@ func TestLengthOfLIS(t *testing.T) {
 		t.Logf("except %d, actual %d", except, result)
 		t.FailNow()
 	}
+
+	if result := LengthOfLIS1(input); result != except {
+		t.Logf("except %d, actual %d", except, result)
+		t.FailNow()
+	}
 }
