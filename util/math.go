@@ -9,3 +9,13 @@ func MaxInt(arr ...int) int {
 	}
 	return max
 }
+
+func MinInt(arr ...int) int {
+	min := arr[0]
+	for i := 1; i < len(arr); i++ {
+		if min > arr[i] {
+			min = arr[i]
+		}
+	}
+	return min
+}
