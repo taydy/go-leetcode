@@ -14,7 +14,7 @@ package medium
 //	来源：力扣（LeetCode）
 //	链接：https://leetcode-cn.com/problems/reverse-linked-list-ii
 //
-func reverseBetween(head *ListNode, m int, n int) *ListNode {
+func ReverseBetween(head *ListNode, m int, n int) *ListNode {
 	if head == nil {
 		return nil
 	}
