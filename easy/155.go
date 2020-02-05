@@ -18,8 +18,8 @@ import "taydy/go-leetcode/util"
 //		minStack.top();      --> 返回 0.
 //		minStack.getMin();   --> 返回 -2.
 //
-//来源：力扣（LeetCode）
-//链接：https://leetcode-cn.com/problems/min-stack
+// 来源：力扣（LeetCode）
+// 链接：https://leetcode-cn.com/problems/min-stack
 //
 type Node struct {
 	Value int
