@@ -32,7 +32,6 @@ type TreeNode struct {
 // 递归
 func rightSideView(root *TreeNode) []int {
 	view := make([]int, 0)
-
 	return helper(root, 0, view)
 }
 
@@ -58,9 +57,9 @@ func rightSideView2(root *TreeNode) []int {
 
 	queue := list.New()
 	queue.PushFront(root)
-	for ; queue.Len() != 0; {
+	for queue.Len() != 0 {
 		size := queue.Len()
-		for ; size > 0;  {
+		for size > 0 {
 			node := queue.Front()
 			queue.Remove(node)
 			if left := node.Value.(*TreeNode).Left; left != nil {
