@@ -18,10 +18,9 @@ package medium
 //		回文中心的两侧互为镜像。因此，回文可以从他的中心展开，并且只有2n-1个这样的中心(一个元素为中心的情况有n个，两个元素为中心的情况有n-1个)
 //
 func longestPalindrome(s string) string {
-	if s == "" {
+	if len(s) == 0 {
 		return ""
 	}
-
 	chars := []rune(s)
 	var start, end int
 
@@ -32,8 +31,8 @@ func longestPalindrome(s string) string {
 			length = lengthB
 		}
 		if length > end-start {
-			start = i - (length-1)/2
-			end = i + length/2
+			start = i - (length-1)>>1
+			end = i + length>>1
 		}
 	}
 	return string(chars[start : end+1])
@@ -41,7 +40,7 @@ func longestPalindrome(s string) string {
 
 func expandAroundCenter(chars []rune, left, right int) int {
 	length := len(chars)
-	for ; left >= 0 && right < length && chars[left] == chars[right]; {
+	for left >= 0 && right < length && chars[left] == chars[right] {
 		left--
 		right++
 	}
