@@ -1,4 +1,4 @@
-package container
+package stack
 
 import "container/list"
 
@@ -6,6 +6,15 @@ import "container/list"
 // stack of objects.
 type Stack struct {
 	l *list.List
+}
+
+func New() *Stack {
+	return new(Stack).Init()
+}
+
+func (s *Stack) Init() *Stack {
+	s.l = list.New()
+	return s
 }
 
 // Returns the number of objects in this stack.
