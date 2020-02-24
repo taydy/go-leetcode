@@ -11,7 +11,7 @@ import "container/list"
 //
 //	来源：力扣（LeetCode）
 //	链接：https://leetcode-cn.com/problems/daily-temperatures
-//
+//  题解：https://leetcode-cn.com/problems/daily-temperatures/solution/mei-ri-wen-du-by-leetcode/
 func DailyTemperatures(T []int) []int {
 	ans := make([]int, len(T))
 	stack := list.New()
