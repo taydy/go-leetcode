@@ -1,6 +1,8 @@
 package medium
 
-func RemoveNthFromEnd(head *ListNode, n int) *ListNode {
+import "github.com/taydy/go-leetcode/structure"
+
+func RemoveNthFromEnd(head *structure.ListNode, n int) *structure.ListNode {
 	root, cache := head, head
 	for ; n > 0; n-- {
 		root = root.Next

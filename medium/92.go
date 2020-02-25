@@ -1,5 +1,7 @@
 package medium
 
+import "github.com/taydy/go-leetcode/structure"
+
 //	反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。
 //
 //	说明:
@@ -14,12 +16,12 @@ package medium
 //	来源：力扣（LeetCode）
 //	链接：https://leetcode-cn.com/problems/reverse-linked-list-ii
 //
-func ReverseBetween(head *ListNode, m int, n int) *ListNode {
+func ReverseBetween(head *structure.ListNode, m int, n int) *structure.ListNode {
 	if head == nil {
 		return nil
 	}
 
-	var prev *ListNode
+	var prev *structure.ListNode
 	cur := head
 
 	for m > 1 {

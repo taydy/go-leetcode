@@ -1,5 +1,7 @@
 package medium
 
+import "github.com/taydy/go-leetcode/structure"
+
 // 给定两个非空链表来代表两个非负整数。数字最高位位于链表开始位置。它们的每个节点只存储单个数字。将这两数相加会返回一个新的链表。
 //
 //	你可以假设除了数字 0 之外，这两个数字都不会以零开头。
@@ -16,7 +18,7 @@ package medium
 // 思路:
 // 	1. 将短的链表前面补零, 让两个链表等长
 //	2. 递归求解
-func AddTwoNumbers2(l1 *ListNode, l2 *ListNode) *ListNode {
+func AddTwoNumbers2(l1 *structure.ListNode, l2 *structure.ListNode) *structure.ListNode {
 	size1 := getListNodeSize(l1)
 	size2 := getListNodeSize(l2)
 
@@ -25,7 +27,7 @@ func AddTwoNumbers2(l1 *ListNode, l2 *ListNode) *ListNode {
 	} else if size1 < size2 {
 		l1 = fillZero(l1, size2-size1)
 	}
-	head := addTwoNumber(l1, l2, &ListNode{
+	head := addTwoNumber(l1, l2, &structure.ListNode{
 		Val: 0,
 	})
 	if head.Val == 0 {
@@ -34,9 +36,9 @@ func AddTwoNumbers2(l1 *ListNode, l2 *ListNode) *ListNode {
 	return head
 }
 
-func addTwoNumber(l1 *ListNode, l2 *ListNode, head *ListNode) *ListNode {
+func addTwoNumber(l1 *structure.ListNode, l2 *structure.ListNode, head *structure.ListNode) *structure.ListNode {
 	if l1 == nil || l2 == nil {
-		head = &ListNode{
+		head = &structure.ListNode{
 			Val: 0,
 		}
 		return head
@@ -45,7 +47,7 @@ func addTwoNumber(l1 *ListNode, l2 *ListNode, head *ListNode) *ListNode {
 	head = addTwoNumber(l1.Next, l2.Next, head)
 	val := l1.Val + l2.Val + head.Val
 	head.Val = val % 10
-	head = &ListNode{
+	head = &structure.ListNode{
 		Val:  val / 10,
 		Next: head,
 	}
@@ -53,9 +55,9 @@ func addTwoNumber(l1 *ListNode, l2 *ListNode, head *ListNode) *ListNode {
 }
 
 // 在 list 前面补零
-func fillZero(head *ListNode, num int) *ListNode {
+func fillZero(head *structure.ListNode, num int) *structure.ListNode {
 	for ; num > 0; num-- {
-		head = &ListNode{
+		head = &structure.ListNode{
 			Val:  0,
 			Next: head,
 		}
@@ -64,7 +66,7 @@ func fillZero(head *ListNode, num int) *ListNode {
 }
 
 // 获取 list 长度
-func getListNodeSize(head *ListNode) int {
+func getListNodeSize(head *structure.ListNode) int {
 	size := 0
 	node := head
 	for node != nil {

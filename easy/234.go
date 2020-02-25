@@ -1,5 +1,7 @@
 package easy
 
+import "github.com/taydy/go-leetcode/structure"
+
 // 请判断一个链表是否为回文链表。
 //
 //	示例 1:
@@ -9,7 +11,7 @@ package easy
 //		输入: 1->2->2->1
 //		输出: true
 
-func IsPalindromeList(head *ListNode) bool {
+func IsPalindromeList(head *structure.ListNode) bool {
 	if head == nil || head.Next == nil {
 		return true
 	}

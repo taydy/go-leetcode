@@ -1,5 +1,7 @@
 package medium
 
+import "github.com/taydy/go-leetcode/structure"
+
 //	在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
 //
 //	示例 1:
@@ -14,8 +16,8 @@ package medium
 //	来源：力扣（LeetCode）
 //	链接：https://leetcode-cn.com/problems/sort-list
 //
-func LinkedSortList(head *ListNode) *ListNode {
-	result := &ListNode{
+func LinkedSortList(head *structure.ListNode) *structure.ListNode {
+	result := &structure.ListNode{
 		Val:  -1,
 		Next: head,
 	}
@@ -46,7 +48,7 @@ func LinkedSortList(head *ListNode) *ListNode {
 	return result.Next
 }
 
-func cut(root *ListNode, n int) *ListNode {
+func cut(root *structure.ListNode, n int) *structure.ListNode {
 	p := root
 	for n > 1 && p != nil {
 		p = p.Next
@@ -62,8 +64,8 @@ func cut(root *ListNode, n int) *ListNode {
 	return next
 }
 
-func merge(l1 *ListNode, l2 *ListNode) *ListNode {
-	root := &ListNode{
+func merge(l1 *structure.ListNode, l2 *structure.ListNode) *structure.ListNode {
+	root := &structure.ListNode{
 		Val: -1,
 	}
 

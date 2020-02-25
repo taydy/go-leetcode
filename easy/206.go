@@ -1,5 +1,7 @@
 package easy
 
+import "github.com/taydy/go-leetcode/structure"
+
 //	反转一个单链表。
 //
 //	示例:
@@ -7,16 +9,10 @@ package easy
 //		输入: 1->2->3->4->5->NULL
 //		输出: 5->4->3->2->1->NULL
 
-// Definition for singly-linked list.
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
-func ReverseList(head *ListNode) *ListNode {
+func ReverseList(head *structure.ListNode) *structure.ListNode {
 
 	// 前指针节点
-	var prev *ListNode
+	var prev *structure.ListNode
 	// 当前指针节点
 	cur := head
 

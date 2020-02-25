@@ -1,5 +1,7 @@
 package medium
 
+import "github.com/taydy/go-leetcode/structure"
+
 //
 // 给出两个非空的链表用来表示两个非负的整数。其中，它们各自的位数是按照逆序的方式存储的，并且它们的每个节点只能存储一位数字。
 //
@@ -14,7 +16,6 @@ package medium
 //	 原因：342 + 465 = 807
 //
 
-
 //
 // 复杂度分析
 //
@@ -25,16 +26,11 @@ package medium
 //
 //
 
-type ListNode struct {
-	Val int
-	Next *ListNode
-}
-
-func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	result := &ListNode{}
+func addTwoNumbers(l1 *structure.ListNode, l2 *structure.ListNode) *structure.ListNode {
+	result := &structure.ListNode{}
 	p := result
 	carry := 0
-	for ; l1 != nil || l2 != nil; {
+	for l1 != nil || l2 != nil {
 		x, y := 0, 0
 		if l1 != nil {
 			x = l1.Val
@@ -46,11 +42,11 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		}
 		sum := x + y + carry
 		carry = sum / 10
-		p.Next = &ListNode{Val: sum % 10}
+		p.Next = &structure.ListNode{Val: sum % 10}
 		p = p.Next
 	}
 	if carry > 0 {
-		p.Next = &ListNode{Val: carry}
+		p.Next = &structure.ListNode{Val: carry}
 	}
 
 	return result.Next

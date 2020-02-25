@@ -1,5 +1,7 @@
 package easy
 
+import "github.com/taydy/go-leetcode/structure"
+
 // 使用队列实现栈的下列操作：
 //
 //	push(x) -- 元素 x 入栈
@@ -14,7 +16,7 @@ package easy
 //
 
 type MyStack struct {
-	stack *ListNode
+	stack *structure.ListNode
 }
 
 /** Initialize your data structure here. */
@@ -24,7 +26,7 @@ func Constructor() MyStack {
 
 /** Push element x onto stack. */
 func (s *MyStack) Push(x int) {
-	node := &ListNode{
+	node := &structure.ListNode{
 		Val:  x,
 		Next: s.stack,
 	}

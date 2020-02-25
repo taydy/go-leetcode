@@ -1,6 +1,9 @@
 package hard
 
-import "github.com/taydy/go-leetcode/easy"
+import (
+	"github.com/taydy/go-leetcode/easy"
+	"github.com/taydy/go-leetcode/structure"
+)
 
 // 合并 k 个排序链表，返回合并后的排序链表。请分析和描述算法的复杂度。
 //
@@ -14,7 +17,7 @@ import "github.com/taydy/go-leetcode/easy"
 //		]
 //	输出: 1->1->2->3->4->4->5->6
 
-func MergeKLists(lists []*easy.ListNode) *easy.ListNode {
+func MergeKLists(lists []*structure.ListNode) *structure.ListNode {
 	length := len(lists)
 	if length == 0 {
 		return nil
