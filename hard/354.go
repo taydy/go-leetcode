@@ -1,8 +1,8 @@
 package hard
 
 import (
+	"github.com/taydy/go-leetcode/medium"
 	"sort"
-	"taydy/go-leetcode/medium"
 )
 
 //	给定一些标记了宽度和高度的信封，宽度和高度以整数对形式 (w, h) 出现。
