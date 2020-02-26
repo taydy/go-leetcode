@@ -2,18 +2,19 @@ package medium
 
 import (
 	"fmt"
+	"github.com/taydy/go-leetcode/structure"
 	"strings"
 	"testing"
 )
 
 func TestLinkedSortList(t *testing.T) {
-	l1 := &ListNode{
+	l1 := &structure.ListNode{
 		Val: 4,
-		Next: &ListNode{
+		Next: &structure.ListNode{
 			Val: 2,
-			Next: &ListNode{
+			Next: &structure.ListNode{
 				Val: 1,
-				Next: &ListNode{
+				Next: &structure.ListNode{
 					Val: 3,
 				},
 			},
@@ -21,15 +22,15 @@ func TestLinkedSortList(t *testing.T) {
 	}
 	t.Logf("%s", print(LinkedSortList(l1)))
 
-	l2 := &ListNode{
+	l2 := &structure.ListNode{
 		Val: -1,
-		Next: &ListNode{
+		Next: &structure.ListNode{
 			Val: 5,
-			Next: &ListNode{
+			Next: &structure.ListNode{
 				Val: 3,
-				Next: &ListNode{
+				Next: &structure.ListNode{
 					Val: 4,
-					Next: &ListNode{
+					Next: &structure.ListNode{
 						Val: 0,
 					},
 				},
@@ -39,7 +40,7 @@ func TestLinkedSortList(t *testing.T) {
 	t.Logf("%s", print(LinkedSortList(l2)))
 }
 
-func print(root *ListNode) string {
+func print(root *structure.ListNode) string {
 	var str strings.Builder
 	for root != nil {
 		str.WriteString(fmt.Sprintf(" %d ", root.Val))
