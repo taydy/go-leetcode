@@ -9,7 +9,7 @@ package medium
 //	来源：力扣（LeetCode）
 //	链接：https://leetcode-cn.com/problems/valid-sudoku
 //
-func isValidSudoku(board [][]byte) bool {
+func IsValidSudoku(board [][]byte) bool {
 	rows := make([]map[byte]struct{}, 9)
 	for i := 0; i < 9; i++ {
 		rows[i] = make(map[byte]struct{})
@@ -43,7 +43,7 @@ func isValidSudoku(board [][]byte) bool {
 				columns[c][t] = struct{}{}
 			}
 
-			box := r/3*2 + c/3
+			box := r/3*3 + c/3
 			if _, ok := boxes[box][t]; ok {
 				return false
 			} else {
