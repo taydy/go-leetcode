@@ -1,17 +1,20 @@
 package easy
 
-import "testing"
+import (
+	"github.com/taydy/go-leetcode/structure"
+	"testing"
+)
 
 func TestReverseList(t *testing.T) {
-	head := &ListNode{
+	head := &structure.ListNode{
 		Val: 1,
-		Next: &ListNode{
+		Next: &structure.ListNode{
 			Val: 2,
-			Next: &ListNode{
+			Next: &structure.ListNode{
 				Val: 3,
-				Next: &ListNode{
+				Next: &structure.ListNode{
 					Val: 4,
-					Next: &ListNode{
+					Next: &structure.ListNode{
 						Val:  5,
 						Next: nil,
 					},

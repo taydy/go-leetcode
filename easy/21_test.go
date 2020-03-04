@@ -1,22 +1,25 @@
 package easy
 
-import "testing"
+import (
+	"github.com/taydy/go-leetcode/structure"
+	"testing"
+)
 
 func TestMergeTwoLists(t *testing.T) {
-	l1 := &ListNode{
+	l1 := &structure.ListNode{
 		Val: 1,
-		Next: &ListNode{
+		Next: &structure.ListNode{
 			Val: 2,
-			Next: &ListNode{
+			Next: &structure.ListNode{
 				Val: 4,
 			},
 		},
 	}
-	l2 := &ListNode{
+	l2 := &structure.ListNode{
 		Val: 1,
-		Next: &ListNode{
+		Next: &structure.ListNode{
 			Val: 3,
-			Next: &ListNode{
+			Next: &structure.ListNode{
 				Val: 4,
 			},
 		},

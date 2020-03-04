@@ -1,25 +1,28 @@
 package easy
 
-import "testing"
+import (
+	"github.com/taydy/go-leetcode/structure"
+	"testing"
+)
 
 func TestGetIntersectionNode1(t *testing.T) {
-	intersectNode := &ListNode{
+	intersectNode := &structure.ListNode{
 		Val: 4,
-		Next: &ListNode{
+		Next: &structure.ListNode{
 			Val: 5,
-			Next: &ListNode{
+			Next: &structure.ListNode{
 				Val: 6,
 			},
 		},
 	}
-	nodeA := &ListNode{
+	nodeA := &structure.ListNode{
 		Val: 0,
-		Next: &ListNode{
+		Next: &structure.ListNode{
 			Val:  1,
 			Next: intersectNode,
 		},
 	}
-	nodeB := &ListNode{
+	nodeB := &structure.ListNode{
 		Val:  2,
 		Next: intersectNode,
 	}
@@ -27,13 +30,13 @@ func TestGetIntersectionNode1(t *testing.T) {
 }
 
 func TestGetIntersectionNode2(t *testing.T) {
-	nodeA := &ListNode{
+	nodeA := &structure.ListNode{
 		Val: 0,
-		Next: &ListNode{
+		Next: &structure.ListNode{
 			Val: 1,
 		},
 	}
-	nodeB := &ListNode{
+	nodeB := &structure.ListNode{
 		Val: 2,
 	}
 	t.Log(GetIntersectionNode(nodeA, nodeB))
