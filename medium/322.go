@@ -1,6 +1,9 @@
 package medium
 
-import "math"
+import (
+	"github.com/taydy/go-leetcode/util"
+	"math"
+)
 
 //	给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。
 //
@@ -23,10 +26,12 @@ func CoinChange(coins []int, amount int) int {
 	if amount < 1 {
 		return 0
 	}
-	return coinChange(coins, amount, make([]int, amount))
+	//return coinChange1(coins, amount, make([]int, amount))
+	return coinChange2(coins, amount)
 }
 
-func coinChange(coins []int, amount int, count []int) int {
+// 动态规划-自上而下
+func coinChange1(coins []int, amount int, count []int) int {
 	if amount < 0 {
 		return -1
 	}
@@ -40,7 +45,7 @@ func coinChange(coins []int, amount int, count []int) int {
 
 	min := math.MaxInt32
 	for _, coin := range coins {
-		r := coinChange(coins, amount-coin, count)
+		r := coinChange1(coins, amount-coin, count)
 		if r != -1 && r < min {
 			min = r + 1
 		}
@@ -52,4 +57,29 @@ func coinChange(coins []int, amount int, count []int) int {
 
 	count[amount-1] = min
 	return min
+}
+
+// 动态规划-自下而上
+func coinChange2(coins []int, amount int) int {
+	max := amount + 1
+	dp := make([]int, max)
+	for i := range dp {
+		dp[i] = max
+	}
+	dp[0] = 0
+
+	for i := 0; i < max; i++ {
+		for j := 0; j < len(coins); j++ {
+			if coins[j] <= i {
+				dp[i] = util.MinInt(dp[i], dp[i-coins[j]]+1)
+			}
+		}
+	}
+
+	if dp[amount] > amount {
+		return -1
+	} else {
+		return dp[amount]
+	}
+
 }
