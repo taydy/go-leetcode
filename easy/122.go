@@ -1,4 +1,4 @@
-package medium
+package easy
 
 import (
 	"github.com/taydy/go-leetcode/util"
